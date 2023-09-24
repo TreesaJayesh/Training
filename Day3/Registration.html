@@ -1,0 +1,168 @@
+﻿
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registration</title>
+    <style>
+        .grid-container {
+            display: grid;
+            grid-template-columns: auto auto;
+            background-color: rgba(0, 0, 0, 0.8);
+            padding: 10px;
+            width: 65%;
+            margin-inline: auto;
+            margin-top: 50px;
+        }
+
+        .grid-item-1 {
+            background-color: rgba(0,0,0,0);
+            border: 1px solid rgba(0, 0, 0, 0, 0);
+            padding-right: 5px;
+            padding-left: 2px;
+            width: 90%;
+        }
+
+        .grid-item-2 {
+            background-color: rgba(255, 255, 255, 0.8);
+            border: 1px solid rgba(0, 0, 0, 0.8);
+            padding-left: 25px;
+            padding-right: 5px;
+            align-content: center;
+            width: 94%;
+            justify-content: space-evenly;
+        }
+    </style>
+
+</head>
+<body>
+    
+   <script src="codep.js" ></script> 
+    <div class="grid-container">
+        <div class="grid-item-1">
+            <img src="reg.jpg" width="450px" height="560px" />
+        </div>
+        <div class="grid-item-2">
+            <form name="registration" onsubmit="return validateForm()">
+
+                <h2 align="center">Registration Form</h2> <br>
+
+                                                          <table>
+
+                                                              <tr>
+                                                                  <td>First name</td>
+                                                                  <td><input type="text" name="firstname" id="fname" placeholder="Enter the firstname"><br></td>
+                                                              </tr>
+                                                              <tr>
+                                                                  <td>Last name</td>
+                                                                  <td><input type="text" name="lastname" id="lname" placeholder="Enter the lastname"><br></td>
+                                                              </tr>
+                                                              <tr>
+                                                                  <td>Date of birth</td>
+                                                                  <td><input type="date" id="birthday" name="birthday"></td>
+                                                              </tr>
+
+                                                              <tr>
+                                                                  <td>Age</td>
+                                                                  <td><input type="number" name="age" placeholder="Enter your age"></td>
+                                                              </tr>
+
+                                                              <tr>
+                                                                  <td>Gender</td>
+                                                                  <td>
+                                                                      <input class="form-check-input" type="radio" name="g" id="femaleGender"
+                                                                             value="option1" />Male
+                                                                      <input class="form-check-input" type="radio" name="g" id="maleGender"
+                                                                             value="option2" />Female
+                                                                      <input class="form-check-input" type="radio" name="g" id="otherGender"
+                                                                             value="option3" /> Other
+                                                                  </td>
+                                                              </tr>
+                                                              <tr>
+                                                                  <td>Mobile number</td>
+                                                                  <td><input type="number" id="phoneNumber" name="phn" placeholder="Input the phone number" /></td>
+                                                              </tr>
+
+                                                              <tr>
+                                                                  <td>Email address</td>
+                                                                  <td><input type="text" name="email" placeholder="Enter the email"><br></td>
+                                                              </tr>
+                                                              <tr>
+                                                                  <td>Address</td>
+
+                                                                  <td>
+                                                                      <textarea name="add" rows="4" cols="50" placeholder="Type in your address"></textarea>
+
+                                                                  </td>
+                                                              </tr>
+                                                              <tr>
+                                                                  <td>State</td>
+                                                                  <td>
+                                                                      <select id="state" name="c_state">
+                                                                          <option value="">Select state</option>
+                                                                          <option value="AP">Andhra Pradesh</option>
+                                                                          <option value="AR">Arunachal Pradesh</option>
+                                                                          <option value="AS">Assam</option>
+                                                                          <option value="BR">Bihar</option>
+                                                                          <option value="CT">Chhattisgarh</option>
+                                                                          <option value="GA">Goa</option>
+                                                                          <option value="GJ">Gujarat</option>
+                                                                          <option value="HR">Haryana</option>
+                                                                          <option value="HP">Himachal Pradesh</option>
+                                                                          <option value="JH">Jharkhand</option>
+                                                                          <option value="KA">Karnataka</option>
+                                                                          <option value="KL">Kerala</option>
+                                                                          <option value="MP">Madhya Pradesh</option>
+                                                                          <option value="MH">Maharashtra</option>
+                                                                          <option value="MN">Manipur</option>
+                                                                          <option value="ML">Meghalaya</option>
+                                                                          <option value="MZ">Mizoram</option>
+                                                                          <option value="NL">Nagaland</option>
+                                                                          <option value="OR">Odisha</option>
+                                                                          <option value="PB">Punjab</option>
+                                                                          <option value="RJ">Rajasthan</option>
+                                                                          <option value="SK">Sikkim</option>
+                                                                          <option value="TN">Tamil Nadu</option>
+                                                                          <option value="TG">Telangana</option>
+                                                                          <option value="TR">Tripura</option>
+                                                                          <option value="UP">Uttar Pradesh</option>
+                                                                          <option value="UT">Uttarakhand</option>
+                                                                          <option value="WB">West Bengal</option>
+                                                                      </select>
+                                                                  </td>
+
+                                                              </tr>
+                                                              <!--<tr>
+        <td>City </td>
+
+        <td>
+
+    <select name="city" id="city" size="1">
+        <option value="" selected="selected">Please select state first</option>
+    </select></td>
+    </tr>-->
+
+                                                              <tr>
+                                                                  <td>Username</td>
+                                                                  <td><input type="text" name="username" placeholder="Enter a username"></td>
+
+                                                              <tr>
+                                                                  <td>Password </td>
+                                                                  <td><input type="text" name="password" placeholder="Enter the password"><br></td>
+                                                              </tr>
+                                                              <tr>
+                                                                  <td>Confirm Password</td>
+                                                                  <td><input type="text" name="cpassword" placeholder="Enter the password again"><br></td>
+                                                              </tr>
+                                                              <tr>
+                                                                  <td></td>
+                                                                  <td><button type="submit">Submit</button></td>
+                                                              </tr>
+                                                          </table>
+            </form>
+
+        </div>
+    </div>
+</body>
+</html>

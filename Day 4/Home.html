@@ -1,0 +1,186 @@
+﻿<!DOCTYPE html>
+
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <title></title>
+</head>
+<body>
+    <style>
+        * .mySlides {display: none}
+        }
+        #f {
+            text-align: center;
+            padding: 5px;
+            background-color: #abbaba;
+            color: #000;
+        }
+        .slideshow-container {
+            max-width: 1000px;
+            position: relative;
+            margin: auto;
+        }
+        .prev, .next {
+            cursor: pointer;
+            position: absolute;
+            top: 50%;
+            width: auto;
+            padding: 16px;
+            margin-top: -22px;
+            color: white;
+            font-weight: bold;
+            font-size: 18px;
+            transition: 0.6s ease;
+            border-radius: 0 3px 3px 0;
+            user-select: none;
+        }
+        .next {
+            right: 0;
+            border-radius: 3px 0 0 3px;
+        }
+            .prev:hover, .next:hover {
+                background-color: rgba(0,0,0,0.8);
+            }
+        .dot {
+            cursor: pointer;
+            height: 15px;
+            width: 15px;
+            margin: 0 2px;
+            background-color: #bbb;
+            border-radius: 50%;
+            display: inline-block;
+            transition: background-color 0.6s ease;
+        }
+            .active, .dot:hover {
+                background-color: #717171;
+            }
+        @media only screen and (max-width: 300px) {
+            .prev, .next, .text {
+                font-size: 11px
+            }
+        }
+        
+          @keyframes fade {
+            from {
+                opacity: .4
+            }
+
+            to {
+                opacity: 1
+            }
+        }
+        .text {
+            color: #f2f2f2;
+            font-size: 15px;
+            padding: 8px 12px;
+            position: absolute;
+            bottom: 8px;
+            width: 100%;
+            text-align: center;
+        }
+
+           .numbertext {
+            color: #ff6a00;
+            font-size: 12px;
+            padding: 8px 12px;
+            position: absolute;
+            top: 0;
+        }
+    </style>
+    <nav class="navbar navbar-default">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <ul class="nav navbar-nav">
+                    <li><img src="logo.jfif" width="25%" height="25%" alt=""></li>
+                    <li class="active"><a href="About.html">About us</a></li>
+                    <li><a href="Login.html">Login</a></li>
+                    <li><a href="Registration.html">Registration</a></li>
+                    <li><a href="Contact.html">Contact Us</a></li>
+                    <li></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    
+        <div class="container">
+            <h3>ABC Website</h3>
+            <p>Welcome all</p><br />
+            <p>Meet the Team</p>
+
+            <div class="slideshow-container">
+                <div class="mySlides">
+                    <div class="numbertext">1 / 4</div>
+                    <img src="hr.jfif" style="width:50%">
+                    <div class="text">HR</div>
+
+                </div>
+                <div class="mySlides">
+                    <div class="numbertext">2 / 4</div>
+                    <img src="design.jfif" style="width:50%">
+                    <div class="text">Design</div>
+
+                </div>
+                <div class="mySlides">
+                    <div class="numbertext">3 / 4</div>
+                    <img src="dev.jfif" style="width:50%">
+                    <div class="text">Dev</div>
+                </div>
+                <div class="mySlides">
+                    <div class="numbertext">4/ 4</div>
+                    <img src="test.jfif" style="width:50%">
+                    <div class="text">Test</div>
+                </div>
+         </div>
+        <footer id="f">
+            <p>&#169;ABC Pvt.Ltd.All Rights Reserved.</p>
+        </footer>
+        <a class="prev" onclick="plusSlides(-1)">❮</a>
+        <a class="next" onclick="plusSlides(1)">❯</a>
+   </div>
+   
+    <br>
+
+    <div style="text-align:center">
+        <span class="dot" onclick="currentSlide(1)"></span>
+        <span class="dot" onclick="currentSlide(2)"></span>
+        <span class="dot" onclick="currentSlide(3)"></span>
+        <span class="dot" onclick="currentSlide(4)"></span>
+    </div>
+
+    <script>
+        let slideIndex = 1;
+        showSlides(slideIndex);
+
+        function plusSlides(n) {
+            showSlides(slideIndex += n);
+        }
+
+        function currentSlide(n) {
+            showSlides(slideIndex = n);
+        }
+
+        function showSlides(n) {
+            let i;
+            let slides = document.getElementsByClassName("mySlides");
+            let dots = document.getElementsByClassName("dot");
+            if (n > slides.length) { slideIndex = 1 }
+            if (n < 1) { slideIndex = slides.length }
+            for (i = 0; i < slides.length; i++) {
+                slides[i].style.display = "none";
+            }
+            for (i = 0; i < dots.length; i++) {
+                dots[i].className = dots[i].className.replace(" active", "");
+            }
+            slides[slideIndex - 1].style.display = "block";
+            dots[slideIndex - 1].className += " active";
+        }
+    </script>
+
+
+
+</body>
+</html>

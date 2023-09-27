@@ -1,0 +1,206 @@
+Tasks:
+1. To learn all the SQL concepts in portal.
+
+2. To create a database and tables with minimum 10 field requirements for your own project, and then implement insert, update, select and delete operations.
+
+3. To create an employee table and how to achieve or get the second highest salary from the table. 
+SELECT MAX(SALARY)as Second FROM Employee where salary<(SELECT MAX(SALARY) FROM Employee);
+Second
+80000         
+4. To perform the SQL statement for to lists the number of employees in each department.
+select Dname,Department.Dno,count(*) as count
+from Department
+inner join Employee on Employee.Dno = Department.Dno 
+group by Dname,Department.Dno
+Dname	Dno	count
+HR	1	2
+Coding	2	1
+Dev	3	1
+Testing	4	2
+
+5. To create two tables and implementing all the SQL joins concepts.
+INNER JOIN/simple join
+LEFT OUTER JOIN/LEFT JOIN
+RIGHT OUTER JOIN/RIGHT JOIN
+FULL OUTER JOIN
+INNER JOIN
+
+6. To combine necessary fields from two different tables by using primary key and foreign key constraints.  
+7. To implement a CRUD operations with different stored procedure method for your given project. 
+8. To implement a CRUD operations with single stored procedure method for your given project.
+9. To implement the concepts of Pivot and unpivot the values in SQL Table.
+10. To implement the merge concepts in SQL Table.
+
+INSERT INTO Employee (Employee_ID, Empname, Empdob, Gender, Salary, Dno)
+VALUES
+('101', 'ABC', '2012-02-12', 'M', '20000', '1'),
+('102', 'DEF', '2014-06-21', 'M', '40000', '4'),
+('103', 'GHI', '2018-05-06', 'F', '60000', '4'),
+('104', 'JKL', '2020-04-10', 'F', '50000', '1'),
+('105', 'MNO', '2021-01-27', 'F', '80000', '2'),
+('106', 'PQR', '2000-05-27', 'F', '100000', '3')
+INSERT INTO Department(Dno, Dname)
+VALUES
+('1', 'HR'),
+('2', 'Coding'),
+('3', 'Dev'),
+('4', 'Testing')
+
+Select * from Employee
+Employee_ID	Empname	Empdob	Gender	Salary	Dno
+101       	ABC       	2012-02-12	M         	85000     	1         
+102       	DEF       	2014-06-21	M         	40000     	4         
+103       	GHI       	2018-05-06	F         	60000     	4         
+104       	JKL       	2020-04-10	F         	50000     	1         
+105       	MNO       	2021-01-27	F         	80000     	2         
+106       	PQR       	2000-05-27	F         	20000     	3  
+
+Select * from Department
+Dno	Dname
+1         	HR        
+2         	Coding    
+3         	Dev       
+4         	Testing 
+
+INSERT INTO Student(Admission_no,firstname,lastname,age)
+VALUES
+('1', 'ABC','DEF',45),
+('2', 'GHI','JKL',24),
+('3','MNO','PQR',30),
+('4', 'STU','VWX',33)
+Select * from Student
+Admission_no	firstname	lastname	age
+1         	ABC       	DEF       	45        
+2         	GHI       	JKL       	24        
+3         	MNO       	PQR       	30        
+4         	STU       	VWX       	33        
+INSERT INTO Fee(Admission_no,Course,Amount)
+VALUES
+('1', 'CS',45000),
+('2', 'IT',75000),
+('3','ME',85000),
+('4', 'CE',85000)
+Admission_No	Course	Amount
+1         	CS        	45000.00
+2         	IT        	75000.00
+3         	ME        	85000.00
+4         	CE        	85000.00
+INSERT INTO Fee(Admission_no,Course,Amount)
+VALUES
+('5', 'ECE',45000)
+INSERT INTO Fee(Admission_no,Course,Amount)
+VALUES
+('7', 'ECE',45000)
+
+INSERT INTO Student(Admission_no,firstname,lastname,age)
+VALUES
+('5', 'mno','PQR',28),
+('6', 'STU','VWX',30)
+
+
+
+#FINAL STUDENT#FINAL FEE
+Admission_no	firstname	lastname	age
+1         	ABC       	DEF       	45        
+2         	GHI       	JKL       	24        
+3         	MNO       	PQR       	30        
+4         	STU       	VWX       	33        
+5         	mno       	PQR       	28        
+6         	STU       	VWX       	30        
+Admission_No	Course	Amount
+1         	CS        	45000.00
+2         	IT        	75000.00
+3         	ME        	85000.00
+4         	CE        	85000.00
+5         	ECE       	45000.00
+7         	ECE       	45000.00   
+
+
+
+
+ 
+##database listing
+SELECT name, database_id, create_date  
+FROM sys.databases;
+master
+tempdb
+model
+msdb
+Employee
+ 
+##tables listing
+select * from sys.tables
+OR
+select * from sysobjects where xtype='U'
+
+Employee
+Department
+Student
+Fee
+sysdiagrams
+
+
+#INNER JOIN
+SELECT Students.admission, Students.firstName, Students.lastName, Fee.amount_paid
+FROM Students
+INNER JOIN Fee
+ON Students.admission = Fee.admission
+Admission_no	firstName	lastName	amount
+1         	ABC       	DEF       	45000.00
+2         	GHI       	JKL       	75000.00
+3         	MNO       	PQR       	85000.00
+4         	STU       	VWX       	85000.00
+5         	mno       	PQR       	45000.00
+#LEFT OUTER JOIN
+SELECT Students.admission, Students.firstName, Students.lastName, Fee.amount_paid
+FROM Students
+LEFT OUTER JOIN Fee
+ON Students.admission = Fee.admission
+Admission_no	firstName	lastName	amount
+1         	ABC       	DEF       	45000.00
+2         	GHI       	JKL       	75000.00
+3         	MNO       	PQR       	85000.00
+4         	STU       	VWX       	85000.00
+5         	mno       	PQR       	45000.00
+6         	STU       	VWX       	NULL
+##RIGHT OUTER JOIN
+SELECT Student.Admission_no,firstName,lastName,amount
+FROM Student
+right OUTER JOIN Fee
+ON Student.admission_no = Fee.admission_no
+1         	ABC       	DEF       	45000.00
+2         	GHI       	JKL       	75000.00
+3         	MNO       	PQR       	85000.00
+4         	STU       	VWX       	85000.00
+5         	mno       	PQR       	45000.00
+NULL	        NULL	        NULL	        45000.00
+##FULL OUTER JOIN
+SELECT Student.Admission_no,firstName,lastName,amount
+FROM Student
+FULL OUTER JOIN Fee
+ON Student.admission_no = Fee.admission_no
+Admission_no	firstName	lastName	amount
+1         	ABC       	DEF       	45000.00
+2         	GHI       	JKL       	75000.00
+3         	MNO       	PQR       	85000.00
+4         	STU       	VWX       	85000.00
+5         	mno       	PQR       	45000.00
+6         	STU       	VWX       	NULL
+NULL	        NULL	        NULL	        45000.00
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

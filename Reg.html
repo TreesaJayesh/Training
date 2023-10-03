@@ -1,0 +1,159 @@
+﻿<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form Validation</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./reg.css">
+    <script defer src="./reg.js"></script>
+</head>
+<body>
+    <div class="container">
+        <form id="form" action="/">
+            <h1>Registration</h1>
+            <div class="input-control">
+                <label for="firstname">First name</label>
+                <input id="firstname" name="firstname" type="text">
+                <div class="error"></div>
+            </div>
+            <div class="input-control">
+                <label for="lastname">Last name"</label>
+                <input id="lastname" name="lastname" type="text">
+                <div class="error"></div>
+            </div>
+            <div class="input-control">
+                <label for="dob">Date of Birth</label>
+                <input id="dob" name="dob" type="date">
+                <div class="error"></div>
+            </div>
+            <div class="input-control">
+                <label for="age">Age</label>
+                <input id="age" name="age" type="number">
+                <div class="error"></div>
+            </div>
+            <div class="gen">
+                <div>
+                    <label for="gender">Gender</label>
+                </div>
+                <input type="radio" name="gender" id="gender"
+                       value="option1" />  Male
+                <input type="radio" name="gender" id="gender"
+                       value="option2" checked/> Female
+                <input type="radio" name="gender" id="gender"
+                       value="option3" />Other
+                <div class="error"></div>
+            </div>
+
+            <div class="input-control">
+                <label for="phno">Phone number</label>
+                <input id="phno" name="phno" type="number">
+                <div class="error"></div>
+            </div>
+            <div class="input-control">
+                <label for="email">Email</label>
+                <input id="email" name="email" type="text">
+                <div class="error"></div>
+            </div>
+            <div class="input-control">
+                <label for="address">Address</label>
+                <input id="address" name="address" type="text">
+                <div class="error"></div>
+            </div>
+
+
+
+
+            <div class="input-control">
+                <label for="state">State</label>
+                <select name="state" id="state" size="1" onchange="makeSubmenu(this.value)">
+                    <option value="" disabled selected>Choose a State</option>
+                    <option >Andhra Pradesh</option>
+                    <option >Arunachal Pradesh</option>
+                    <option >Assam</option>
+                    <option >Bihar</option>
+                    <option >Chhattisgarh</option>
+                    <option >Goa</option>
+                    <option >Gujarat</option>
+                    <option >Haryana</option>
+                    <option >Himachal Pradesh</option>
+                    <option >Jharkhand</option>
+                    <option >Karnataka</option>
+                    <option >Kerala</option>
+                    <option >Madhya Pradesh</option>
+                    <option >Maharashtra</option>
+                    <option >Manipur</option>
+                    <option >Meghalaya</option>
+                    <option >Mizoram</option>
+                    <option >Nagaland</option>
+                    <option >Odisha</option>
+                    <option >Punjab</option>
+                    <option >Rajasthan</option>
+                    <option >Sikkim</option>
+                    <option >Tamil Nadu</option>
+                    <option >Telangana</option>
+                    <option >Tripura</option>
+                    <option >Uttar Pradesh</option>
+                    <option >Uttarakhand</option>
+                    <option >West Bengal</option>
+
+                    <!--    <option value="AP">Andhra Pradesh</option>
+        <option value="AR">Arunachal Pradesh</option>
+        <option value="AS">Assam</option>
+        <option value="BR">Bihar</option>
+        <option value="CT">Chhattisgarh</option>
+        <option value="GA">Goa</option>
+        <option value="GJ">Gujarat</option>
+        <option value="HR">Haryana</option>
+        <option value="HP">Himachal Pradesh</option>
+        <option value="JH">Jharkhand</option>
+        <option value="KA">Karnataka</option>
+        <option value="KL">Kerala</option>
+        <option value="MP">Madhya Pradesh</option>
+        <option value="MH">Maharashtra</option>
+        <option value="MN">Manipur</option>
+        <option value="ML">Meghalaya</option>
+        <option value="MZ">Mizoram</option>
+        <option value="NL">Nagaland</option>
+        <option value="OR">Odisha</option>
+        <option value="PB">Punjab</option>
+        <option value="RJ">Rajasthan</option>
+        <option value="SK">Sikkim</option>
+        <option value="TN">Tamil Nadu</option>
+        <option value="TG">Telangana</option>
+        <option value="TR">Tripura</option>
+        <option value="UP">Uttar Pradesh</option>
+        <option value="UT">Uttarakhand</option>
+        <option value="WB">West Bengal</option>-->
+                </select>
+                <!--  <div class="error"></div>-->
+            </div>
+            <div class="input-control">
+                <label for="city"> Choose a City</label>
+                <select id="city" size="1">
+                    <option value="" disabled selected>Choose City</option>
+                    <option></option>
+                </select>
+            </div>
+           <div class="input-control">  
+            <label for="username">Username</label>
+            <input id="username" name="username" type="text">
+            <div class="error"></div>
+            </div>
+            <div class="input-control">
+            <label for="password">Password</label>
+            <input id="password" name="password" type="password">
+            <div class="error"></div>
+            </div>
+            <div class="input-control">
+                <label for="password2">Confirm Password</label>
+                <input id="password2" name="password2" type="password">
+                <div class="error"></div>
+            </div>
+    <button type="submit">Sign Up</button>
+    </form>
+    </div>
+</body>
+</html>
